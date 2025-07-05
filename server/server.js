@@ -7,10 +7,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 5000;
+// ✅ Serve React build folder (very important)
+app.use(express.static(path.join(__dirname, "../client/build")));
+
+// ✅ Videos data
+const PORT = process.env.PORT || 5000;
 const videoPath = path.join(__dirname, "data", "videos.json");
 let videos = JSON.parse(fs.readFileSync(videoPath, "utf-8"));
 
+// ✅ API routes
 app.get("/videos", (req, res) => {
   res.json(videos);
 });
@@ -33,6 +38,12 @@ app.post("/share", (req, res) => {
   res.json({ success: true });
 });
 
+// ✅ All other GET requests → serve React index.html
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+
+// ✅ Start the server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
