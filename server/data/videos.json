@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "title": "Fitness Motivation",
+    "description": "Morning boost to start your day!",
+    "url": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "likes": 1
+  },
+  {
+    "id": 2,
+    "title": "Calm Nature",
+    "description": "Relax with nature sounds",
+    "url": "https://www.w3schools.com/html/movie.mp4",
+    "likes": 17
+  },
+  {
+    "id": 3,
+    "title": "Product Demo",
+    "description": "Showcase of our newest tech",
+    "url": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "likes": 3
+  },
+  {
+    "id": 4,
+    "title": "Travel Vlog",
+    "description": "Explore the world with us",
+    "url": "https://www.w3schools.com/html/movie.mp4",
+    "likes": 6
+  },
+  {
+    "id": 5,
+    "title": "Cooking Show",
+    "description": "Learn to cook delicious meals",
+    "url": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "likes": 0
+  }
+]
