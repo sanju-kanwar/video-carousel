@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import OuterCarousel from "./components/OuterCarousel";
 import InnerModalSlider from "./components/InnerModalSlider";
+import BASE_URL from "./config";
 import "./index.css";
 import "./App.css";
 
@@ -9,7 +10,7 @@ function App() {
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/videos")
+    fetch(`${BASE_URL}/videos`)
       .then((res) => res.json())
       .then(setVideos);
   }, []);

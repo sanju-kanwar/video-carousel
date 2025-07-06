@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-
+import BASE_URL from "../config";
 const InnerModalSlider = ({ videos, startIndex, onClose }) => {
   const [current, setCurrent] = useState(startIndex);
 
@@ -92,7 +92,7 @@ const VideoCardInner = ({ video }) => {
   const handleLike = async () => {
     const newLiked = !liked;
     setLiked(newLiked);
-    await fetch("http://localhost:5000/like", {
+    await fetch(`${BASE_URL}/like`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ videoId: video.id }),
@@ -101,7 +101,7 @@ const VideoCardInner = ({ video }) => {
 
   const handleShare = () => {
     navigator.clipboard.writeText(video.url);
-    fetch("http://localhost:5000/share", {
+    fetch(`${BASE_URL}/share`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ videoId: video.id, platform: "copy_link" }),
